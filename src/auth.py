@@ -9,7 +9,7 @@ def valid_usn(usn, file):
     NEEDS TO BE .XLS FILE TYPE. CANNOT BE .XLSX TYPE
     Returns True if USN is in the first column of the first sheet of the file
 
-    USECAGE : 
+    USEAGE : 
     valid_usn(12345, "data\\usn.xls") 
     >>> True
     """
