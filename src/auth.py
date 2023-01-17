@@ -2,7 +2,7 @@ import xlrd
 import openpyxl
 
 
-def valid_usn(usn, file):
+def valid_usn(usn, file_path):
 
     """
     Takes two parameters, USN number, and the path to the .xls file
@@ -14,7 +14,7 @@ def valid_usn(usn, file):
     >>> True
     """
 
-    wb = xlrd.open_workbook(file)
+    wb = xlrd.open_workbook(file_path)
     sheet = wb.sheet_by_index(0)
     
     for i in range(sheet.ncols):
@@ -23,7 +23,7 @@ def valid_usn(usn, file):
     return False
 
 
-def add_to_excel(num, file_path):
+def add_to_excel(usn, file_path):
 
     """
     Takes two parameters, USN number, and the path to the .xlsx file
@@ -39,6 +39,6 @@ def add_to_excel(num, file_path):
 
     a = sheet.max_row + 1
     cell = sheet.cell(row = a, column=1)
-    cell.value = num
+    cell.value = usn
     # Save the changes to the workbook
     wb.save(file_path)
