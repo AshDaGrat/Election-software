@@ -9,7 +9,7 @@ def valid_usn(usn, file):
     NEEDS TO BE .XLS FILE TYPE. CANNOT BE .XLSX TYPE
     Returns True if USN is in the first column of the first sheet of the file
 
-    USEAGE : 
+    USECAGE : 
     valid_usn(12345, "data\\usn.xls") 
     >>> True
     """
@@ -37,12 +37,7 @@ def add_to_excel(num, file_path):
     wb = openpyxl.load_workbook(file_path)
     sheet = wb.active
 
-    # Find the first empty row in the sheet
-    a = 0
-    for row in sheet.iter_rows():
-        for cell in row:
-            a+=1
-
+    a = sheet.max_row + 1
     cell = sheet.cell(row = a, column=1)
     cell.value = num
     # Save the changes to the workbook
