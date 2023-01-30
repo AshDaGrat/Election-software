@@ -10,7 +10,7 @@ def valid_usn(usn, file_path):
     Returns True if USN is in the first column of the first sheet of the file
 
     USECAGE : 
-    valid_usn(12345, "data\\usn.xls") 
+    valid_usn(12345, "Election-software\\data\\usn.xls") 
     >>> True
     """
 
@@ -31,7 +31,7 @@ def add_to_excel(usn, file_path):
     adds usn to first empty row in first column of sheet
 
     USEAGE : 
-    add_to_excel(1234, "data\\done.xlsx")
+    add_to_excel(1234, "Election-software\\data\\done.xlsx")
     """
 
     wb = openpyxl.load_workbook(file_path)
