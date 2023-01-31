@@ -1,0 +1,1 @@
+{'usn': 100212, 'spl-b': 'raju', 'spl-g': 'kaju', 'cs-b': 'gaju', 'cs-g': 'ayo', 'ss-b': 'kalia', 'ss-g': 'dholu', 'aspl-b': 'bholu', 'aspl-g': 'priti bala', 'acs-b': 'varnika', 'acs-g': 'saswath', 'ass-b': 'bill cosby', 'ass-g': 'bill sinby'}
