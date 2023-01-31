@@ -1,4 +1,4 @@
-file1 = open("Election-software\data\something.txt","r+")
+file1 = open("Election-software\data\something.txt", "r+")
 l = []
 l = (file1.read().split(", "))
 

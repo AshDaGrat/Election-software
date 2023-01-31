@@ -1,5 +1,6 @@
-import socket 
+import socket
 import threading
+import json
 
 HEADER = 64
 PORT = 5050
@@ -11,6 +12,14 @@ DISCONNECT_MESSAGE = "!DISCONNECT"
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(ADDR)
 
+
+def write(towrite):
+    data = json.load(open("Election-software\\data\\recd_data.json"))
+    data.append(towrite)
+    with open("Election-software\\data\\recd_data.json", "w") as f:
+        json.dump(data, f)
+
+
 def handle_client(conn, addr):
     print(f"[NEW CONNECTION] {addr} connected.")
 
@@ -21,11 +30,13 @@ def handle_client(conn, addr):
             msg_length = int(msg_length)
             msg = conn.recv(msg_length).decode(FORMAT)
 
-            #write to datafile
-            file1 = open("Election-software\\data\\votes.txt","a")
+            # write to datafile
+            file1 = open("Election-software\\data\\votes.txt", "a")
             temp = msg + ","
             file1.writelines(msg)
             file1.close()
+
+            write(msg)
 
             if msg == DISCONNECT_MESSAGE:
                 connected = False
@@ -33,6 +44,7 @@ def handle_client(conn, addr):
             print(f"[{addr}] {msg}")
             conn.send("Msg received".encode(FORMAT))
     conn.close()
+
 
 def start():
     server.listen()
@@ -42,6 +54,7 @@ def start():
         thread = threading.Thread(target=handle_client, args=(conn, addr))
         thread.start()
         print(f"[ACTIVE CONNECTIONS] {threading.activeCount() - 1}")
+
 
 print("[STARTING] server is starting...")
 start()
