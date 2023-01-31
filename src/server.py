@@ -15,7 +15,7 @@ server.bind(ADDR)
 
 def write(towrite):
     data = json.load(open("Election-software\\data\\recd_data.json"))
-    data.append(towrite)
+    data["data"].append(towrite)
     with open("Election-software\\data\\recd_data.json", "w") as f:
         json.dump(data, f)
 
@@ -38,10 +38,15 @@ def handle_client(conn, addr):
 
             write(msg)
 
+            """
             if msg == DISCONNECT_MESSAGE:
                 connected = False
-
+            """
+            
             print(f"[{addr}] {msg}")
+            msg = eval(msg)
+            print(type(msg))
+            
             conn.send("Msg received".encode(FORMAT))
     conn.close()
 

@@ -1,11 +1,13 @@
-#UI WIP
+import eel
+from random import randint
 
-import tkinter as tk
-from tkinter import *
-r = tk.Tk()
-r.title('Test GUI')
-button = tk.Button(r, text = "STOP", width = 100, height=40,command = r.destroy)
-button.pack()
+eel.init("Election-software\\src\\web")
 
+# Exposing the random_python function to javascript
+@eel.expose	
+def random_python():
+	print("Random function running")
+	return randint(1,100)
 
-r.mainloop()
+# Start the index.html file
+eel.start("index.html")
