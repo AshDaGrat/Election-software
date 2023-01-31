@@ -14,6 +14,7 @@ server.bind(ADDR)
 
 
 def write(towrite):
+    towrite = eval(towrite)
     data = json.load(open("Election-software\\data\\recd_data.json"))
     data["data"].append(towrite)
     with open("Election-software\\data\\recd_data.json", "w") as f:
@@ -31,10 +32,10 @@ def handle_client(conn, addr):
             msg = conn.recv(msg_length).decode(FORMAT)
 
             # write to datafile
-            file1 = open("Election-software\\data\\votes.txt", "a")
+            """file1 = open("Election-software\\data\\votes.txt", "a")
             temp = msg + ","
             file1.writelines(msg)
-            file1.close()
+            file1.close()"""
 
             write(msg)
 

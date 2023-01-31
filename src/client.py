@@ -1,17 +1,30 @@
 import socket
-import eel
 
 HEADER = 64
 PORT = 5050
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DISCONNECT"
-SERVER = "192.168.50.98"
+SERVER = "192.168.50.248"
 ADDR = (SERVER, PORT)
+
+CHOICES = {'usn': 100212,
+           'spl-b': 'raju',
+           'spl-g': 'kaju',
+           'cs-b': 'gaju',
+           'cs-g': 'ayo',
+           'ss-b': 'kalia',
+           'ss-g': 'dholu',
+           'aspl-b': 'bholu',
+           'aspl-g': 'priti bala',
+           'acs-b': 'varnika',
+           'acs-g': 'saswath',
+           'ass-b': 'bill cosby',
+           'ass-g': 'bill sinby'}
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect(ADDR)
 
-@eel.expose	
+
 def send(msg):
     message = msg.encode(FORMAT)
     msg_length = len(message)
@@ -21,11 +34,4 @@ def send(msg):
     client.send(message)
     print(client.recv(2048).decode(FORMAT))
 
-"""
-send("Hello World!")
-input()
-send("Hello Everyone!")
-input()
-send(DISCONNECT_MESSAGE)
-"""
-
+send(str(CHOICES))
