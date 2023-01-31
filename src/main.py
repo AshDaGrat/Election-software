@@ -1,13 +1,15 @@
 import eel
 from random import randint
+import auth
 
 eel.init("Election-software\\src\\web")
 
-# Exposing the random_python function to javascript
+# login
 @eel.expose	
-def random_python():
-	print("Random function running")
-	return randint(1,100)
+def login(input_val):
+	print(input_val)
+	auth.add_to_excel(input_val, "Election-software\\data\\done.xlsx")
+	return auth.valid_usn(input_val, "Election-software\\data\\usn.xlsx")
 
 # Start the index.html file
 eel.start("index.html")

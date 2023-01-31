@@ -13,7 +13,7 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(ADDR)
 
 
-def write(towrite):
+def write_to_json(towrite):
     towrite = eval(towrite)
     data = json.load(open("Election-software\\data\\recd_data.json"))
     data["data"].append(towrite)
@@ -30,19 +30,7 @@ def handle_client(conn, addr):
         if msg_length:
             msg_length = int(msg_length)
             msg = conn.recv(msg_length).decode(FORMAT)
-
-            # write to datafile
-            """file1 = open("Election-software\\data\\votes.txt", "a")
-            temp = msg + ","
-            file1.writelines(msg)
-            file1.close()"""
-
-            write(msg)
-
-            """
-            if msg == DISCONNECT_MESSAGE:
-                connected = False
-            """
+            write_to_json(msg)
 
             print(f"[{addr}] {msg}")
             msg = eval(msg)
