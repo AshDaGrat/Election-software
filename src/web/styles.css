@@ -1,6 +1,6 @@
 @font-face {
     src: url(assets/GlacialIndifference-Regular.otf);
-    font-family: something;
+    font-family: GlacialIndifference;
 }
 
 body {
@@ -8,7 +8,7 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	font-family: something;
+	font-family: GlacialIndifference;
 	display: flex;
 	min-height: 90vh;
   }
@@ -22,21 +22,21 @@ body {
 	  0px 30px 60px 1px rgba(0,0,0,0.5);
 	border-radius: 8px;
 	padding: 50px;
-	font-family: something;
+	font-family: GlacialIndifference;
   }
   .login .head {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-family: something;
+	font-family: GlacialIndifference;
   }
   .login .head .company {
 	font-size: 2.2em;
-	font-family: something;
+	font-family: GlacialIndifference;
   }
   .login .msg {
 	text-align: center;
-	font-family: something;
+	font-family: GlacialIndifference;
   }
   .login .form input[type=text].text {
 	border: none;
@@ -46,11 +46,11 @@ body {
 	color: white;
 	font-size: 1em;
 	outline: none;
-	font-family: something;
+	font-family: GlacialIndifference;
   }
   .login .form .text::placeholder {
 	color: #D3D3D3;
-	font-family: something;
+	font-family: GlacialIndifference;
   }
   .login .form .btn-login {
 	background: none;
@@ -60,17 +60,18 @@ body {
 	border-radius: 3px;
 	padding: 5px 2em;
 	transition: 0.5s;
-	font-family: something;
+	font-family: GlacialIndifference;
+	width: 100%;	
   }
   .login .form .btn-login:hover {
 	background: white;
 	color: dimgray;
 	transition: 0.5s;
-	font-family: something;
+	font-family: GlacialIndifference;
   }
   .login .forgot {
 	text-decoration: none;
 	color: white;
 	float: right;
-	font-family: something;
+	font-family: GlacialIndifference;
   }

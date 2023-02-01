@@ -1,11 +1,14 @@
 function getInputValue() {
     let inputVal = document.getElementById("inputId").value;
-    eel.login(inputVal)(function(bool){					
-        if(bool){
+    eel.login(inputVal)(function(e){					
+        if(e == 3){
             window.location.href = "forms/test.html";
         }
-        else{
-            window.location.href = "forms/test.html"
+        if(e == 2){
+            alert("Invalid USN/Employee Number");
+        }
+        if(e == 1){
+            alert("Already Voted");
         }
     })
 }
