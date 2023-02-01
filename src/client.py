@@ -4,7 +4,7 @@ HEADER = 64
 PORT = 5050
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DISCONNECT"
-SERVER = "192.168.50.248"
+SERVER = "192.168.130.248"
 ADDR = (SERVER, PORT)
 
 CHOICES = {'usn': 100212,
@@ -19,7 +19,12 @@ CHOICES = {'usn': 100212,
            'acs-b': 'varnika',
            'acs-g': 'saswath',
            'ass-b': 'bill cosby',
-           'ass-g': 'bill sinby'}
+           'ass-g': 'bill sinby',
+           'ic-p' : 'the abhuraj',
+           'ic-vp': 'nigin',
+           'ic-sec': 'therila',
+           'ic-t': 'pankti'
+           }
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect(ADDR)

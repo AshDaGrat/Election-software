@@ -15,10 +15,10 @@ server.bind(ADDR)
 
 def write_to_json(towrite):
     towrite = eval(towrite)
-    data = json.load(open("Election-software\\data\\recd_data.json"))
+    data = json.load(open("data/recd_data.json"))
     data["data"].append(towrite)
-    with open("Election-software\\data\\recd_data.json", "w") as f:
-        json.dump(data, f)
+    with open("data/recd_data.json", "w") as f:
+        json.dump(data, f, indent=4)
 
 
 def handle_client(conn, addr):
