@@ -1,15 +1,20 @@
+@font-face {
+    src: url(assets/GlacialIndifference-Regular.otf);
+    font-family: something;
+}
+
 body {
 	background-image: url(assets/bg.jpeg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	font-family: sans-serif;
+	font-family: something;
 	display: flex;
 	min-height: 90vh;
   }
   .login {
 	color: white;
-	background: #8D94FB;
+	background: #1B4A9E;
 	margin: auto;
 	box-shadow: 
 	  0px 2px 10px rgba(0,0,0,0.2), 
@@ -17,17 +22,21 @@ body {
 	  0px 30px 60px 1px rgba(0,0,0,0.5);
 	border-radius: 8px;
 	padding: 50px;
+	font-family: something;
   }
   .login .head {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-family: something;
   }
   .login .head .company {
 	font-size: 2.2em;
+	font-family: something;
   }
   .login .msg {
 	text-align: center;
+	font-family: something;
   }
   .login .form input[type=text].text {
 	border: none;
@@ -37,9 +46,11 @@ body {
 	color: white;
 	font-size: 1em;
 	outline: none;
+	font-family: something;
   }
   .login .form .text::placeholder {
 	color: #D3D3D3;
+	font-family: something;
   }
   .login .form .btn-login {
 	background: none;
@@ -49,14 +60,17 @@ body {
 	border-radius: 3px;
 	padding: 5px 2em;
 	transition: 0.5s;
+	font-family: something;
   }
   .login .form .btn-login:hover {
 	background: white;
 	color: dimgray;
 	transition: 0.5s;
+	font-family: something;
   }
   .login .forgot {
 	text-decoration: none;
 	color: white;
 	float: right;
+	font-family: something;
   }

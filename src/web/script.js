@@ -2,10 +2,10 @@ function getInputValue() {
     let inputVal = document.getElementById("inputId").value;
     eel.login(inputVal)(function(bool){					
         if(bool){
-            window.location.href = "test.html";
+            window.location.href = "forms/test.html";
         }
         else{
-            window.location.href = "test.html"
+            window.location.href = "forms/test.html"
         }
     })
 }
