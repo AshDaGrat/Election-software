@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
+	<link rel="icon" href= "assets/logo.png"/>
 	<link rel="stylesheet" type="text/css" href=styles.css>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,11 +14,9 @@
 		<div class='head'>
 		<h1 class='company'>LOGIN</h1>
 		</div>
-		<p class='msg'>Enter your USN / Employee Code</p>
-		<br>
 		<div class='form'>
 		  <form>
-			<input type="text" placeholder='USN / Employee Code' class='text' id='inputId' required><br><br>
+			<input autocomplete="off" type="text" placeholder='USN / Employee Code' class='text' id='inputId' required><br><br>
 			<button type="button" class='btn-login' onclick="getInputValue();">Login</button>
 		  </form>
 		</div>
