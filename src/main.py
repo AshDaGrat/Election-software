@@ -7,8 +7,8 @@ eel.init("src/web")
 @eel.expose	
 def login(input_val):
 	print(input_val)
-	auth.add_to_excel(input_val, "data\\done.xlsx")
-	return auth.valid_usn(input_val, "data\\usn.xlsx")
+	auth.add_to_excel(input_val, "data/done.xlsx")
+	return auth.valid_usn(input_val, "data/usn.xlsx")
 
 @eel.expose
 def test(a):
