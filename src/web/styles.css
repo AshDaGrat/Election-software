@@ -75,3 +75,24 @@ body {
 	float: right;
 	font-family: GlacialIndifference;
   }
+  .labelexpanded > input {
+	display: none;
+}
+.labelexpanded input:checked + .radio-btns {
+	background: #253c6a;
+	color: #fff;
+}
+.radio-btns {
+	width: 350px;
+	height: 350px;
+	text-align: center;
+	position: relative;
+	padding: 50px 50px;
+	border-radius: 30px;
+	cursor: pointer;
+	float:left;
+}
+.radio-btns > img {
+	width: 350px;
+	height: 350px;
+}

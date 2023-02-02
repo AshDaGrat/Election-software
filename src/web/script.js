@@ -2,7 +2,7 @@ function getInputValue() {
     let inputVal = document.getElementById("inputId").value;
     eel.login(inputVal)(function(e){					
         if(e == 3){
-            window.location.href = "forms/test.html";
+            window.location.href = "forms/1.html";
         }
         if(e == 2){
             alert("Invalid USN/Employee Number");
