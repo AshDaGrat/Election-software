@@ -2,7 +2,7 @@ import eel
 import auth
 import socket
 
-eel.init("src\\web")
+eel.init("web")
 
 # login
 @eel.expose	
@@ -24,7 +24,7 @@ HEADER = 64
 PORT = 5050
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DISCONNECT"
-SERVER = "192.168.50.98"
+SERVER = "192.168.93.98"
 ADDR = (SERVER, PORT)
 
 CHOICES = {'usn': 100212,
@@ -61,5 +61,4 @@ def send(msg):
     
 # Start the index.html file
 eel.start("index.html")
-
-#send(str(CHOICES))
+send(str(CHOICES))
