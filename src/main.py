@@ -2,29 +2,27 @@ import eel
 import auth
 import socket
 
-eel.init("src\\web")
-
-# login
-@eel.expose	
-def login(input_val):
-	input_val = int(input_val)
-	print(input_val)
-	if auth.valid_usn(input_val, "data/done.xlsx"): return 1 #check for if they have already voted
-	if not(auth.valid_usn(input_val, "data/usn.xlsx")): return 2 #check for invalid USN
-	else:
-		#auth.add_to_excel(input_val, "data/done.xlsx")
-		return 3
+eel.init("/Users/ayaan/Documents/ElectionSoftware/Election-software/src/web")
 
 
 @eel.expose
 def test(a):
-	print(a)
+    print(a)
 
-HEADER = 64
+    """if auth.valid_usn(input_val, "../data/done.xlsx"):
+        return 1  # check for if they have already voted
+    if not (auth.valid_usn(input_val, "../data/usn.xlsx")):
+        return 2  # check for invalid USN
+    else:
+        # auth.add_to_excel(input_val, "data/done.xlsx")
+        return 3"""
+
+
+HEADER = 256
 PORT = 5050
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DISCONNECT"
-SERVER = "192.168.50.98"
+SERVER = "127.0.0.1"
 ADDR = (SERVER, PORT)
 
 CHOICES = {'usn': 100212,
@@ -40,7 +38,7 @@ CHOICES = {'usn': 100212,
            'acs-g': 'saswath',
            'ass-b': 'bill cosby',
            'ass-g': 'bill sinby',
-           'ic-p' : 'the abhuraj',
+           'ic-p': 'the abhuraj',
            'ic-vp': 'nigin',
            'ic-sec': 'therila',
            'ic-t': 'pankti'
@@ -57,9 +55,22 @@ def send(msg):
     send_length += b' ' * (HEADER - len(send_length))
     client.send(send_length)
     client.send(message)
-    print(client.recv(2048).decode(FORMAT))
-    
+    # print(client.recv(2048).decode(FORMAT))
+
+
+@eel.expose
+def login(input_val):
+    input_val = int(input_val)
+    print(input_val)
+    send(str([0, input_val]))
+    x = client.recv(HEADER).decode(FORMAT)
+    x = eval(x)
+    print(type(x))
+    print(int(x[1]))
+    return int(x[1])
+
+
 # Start the index.html file
 eel.start("index.html")
 
-#send(str(CHOICES))
+# send(str(CHOICES))
