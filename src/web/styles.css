@@ -124,6 +124,13 @@ body {
 	padding-left:50px;
 	padding-right:50px;
 }
+.next-btn {
+    width:100px;
+    height:50px;
+    position:absolute;
+    bottom: 10px;
+}
+
 label {
 	display:grid;
 }
