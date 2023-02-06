@@ -91,7 +91,7 @@ body {
 	height: 230px;
 	text-align: center;
 	position: relative;
-	padding: 20px 20px;
+	padding: 15px 15px;
 	border-radius: 30px;
 	cursor: pointer;
 	float:center;
@@ -113,6 +113,7 @@ body {
 	text-align: center;
 	vertical-align: top;
 	color: white;
+
     }
 .buttons {
 	font-size: 1em;
