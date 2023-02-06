@@ -128,7 +128,30 @@ body {
     width:100px;
     height:50px;
     position:absolute;
-    bottom: 10px;
+    bottom: 20px;
+    right: 20px;
+    font-family: GlacialIndifference;
+    font-size: 2em;
+}
+.next-btn:hover {
+    background: #1B4A9E;
+	color: white;
+	transition: 0.25s;
+}
+
+.prev-btn {
+    width:100px;
+    height:50px;
+    position:absolute;
+    bottom: 20px;
+    left: 20px;
+    font-family: GlacialIndifference;
+    font-size: 2em;
+}
+.prev-btn:hover {
+    background: #1B4A9E;
+	color: white;
+	transition: 0.25s;
 }
 
 label {
