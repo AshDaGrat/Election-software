@@ -65,8 +65,8 @@ def login(input_val):
     send(str([0, input_val]))
     x = client.recv(HEADER).decode(FORMAT)
     x = eval(x)
-    print(type(x))
-    print(int(x[1]))
+    # print(type(x))
+    # print(int(x[1]))
     return int(x[1])
 
 

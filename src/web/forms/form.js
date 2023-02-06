@@ -26,7 +26,7 @@ editable.innerHTML = `
 <label class="labelexpanded">
     <input type="radio" id="Jyaan Aamil" name="options" value="Jyaan Aamil">
     <div class="radio-btns">
-        <img src="../assets/yea.png">
+        <img src="../assets/fourfeet.png">
         <p>Jyaan Aamil</p>
     </div>
 </input>
