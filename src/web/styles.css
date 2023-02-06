@@ -77,7 +77,7 @@ body {
   }
 .indiv {
 	position: relative;
-	float:right;
+	float:left;
 }
 .indiv > input {
 	display: none;
