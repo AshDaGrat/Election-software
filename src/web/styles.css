@@ -78,6 +78,8 @@ body {
 .indiv {
 	position: relative;
 	float:left;
+	padding-left:30px;
+	padding-right:30px;
 }
 .indiv > input {
 	display: none;
@@ -107,7 +109,7 @@ body {
 	vertical-align: top;
 }
 .dei {
-    font-size: 5em;
+    font-size: 4em;
 	height: fit-content;
 	width: 100%;
 	text-align: center;
