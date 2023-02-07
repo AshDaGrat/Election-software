@@ -3,6 +3,7 @@ function getInputValue() {
     eel.login(inputVal)(function(e){					
         if(e == 3){
             window.location.href = "forms/wannavote.html";
+            eel.votingDict('USN', inputVal);
         }
         if(e == 2){
             alert("Invalid USN/Employee Number");
@@ -28,19 +29,32 @@ function getSelectedOption() {
             eel.test("pass")}
         }
         if(e == 1){
-            alert("okay");
-            eel.test("cool")
+            eel.test("cool");
+            window.location.href = 'splb.html';
         }
         if(e == 2){
             alert("Please choose an option");
         }
     })
-    }}
+    }
+    else if (window.location.href == 'http://localhost:8000/forms/splb.html'){
+        eel.votingDict('splb', value);
+        window.location.href = 'splg.html'
+        }
+    else if (window.location.href == 'http://localhost:8000/forms/splg.html'){
+        eel.votingDict('splg', value);
+        }
+    }
 
 function goBack(){
+    eel.test(window.location.href);
     if (window.location.href == 'http://localhost:8000/forms/wannavote.html'){
-    window.location.href = '../index.html'}
-}
+        window.location.href = '../index.html';}
+    else if (window.location.href == 'http://localhost:8000/forms/splb.html'){
+        window.location.href = 'wannavote.html';}
+    else if (window.location.href == 'http://localhost:8000/forms/splg.html'){
+        window.location.href = 'splb.html';}}
+
 /*
 document.querySelector("button").onclick = function () {
     // Call python's random_python function

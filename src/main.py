@@ -10,6 +10,7 @@ vDict = {}
 @eel.expose
 def votingDict(post, candidate):
     vDict[post] = candidate
+    print(vDict)
 
 
 @eel.expose
