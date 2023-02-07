@@ -61,8 +61,15 @@ function getSelectedOption() {
         }
     else if (window.location.href == 'http://localhost:8000/forms/csg.html'){
         eel.votingDict('csg', value);
-
+        window.location.href = 'acsb.html';
         }
+    else if (window.location.href == 'http://localhost:8000/forms/acsb.html'){
+        eel.votingDict('acsb', value);
+        window.location.href = 'acsg.html';
+        }
+    else if (window.location.href == 'http://localhost:8000/forms/acsg.html'){
+        eel.votingDict('acsg', value);
+    }
     }
 
 function goBack(){
@@ -80,7 +87,12 @@ function goBack(){
     else if (window.location.href == 'http://localhost:8000/forms/csb.html'){
         window.location.href = 'asplg.html';}
     else if (window.location.href == 'http://localhost:8000/forms/csg.html'){
-        window.location.href = 'csb.html';}}
+        window.location.href = 'csb.html';}
+    else if (window.location.href == 'http://localhost:8000/forms/acsb.html'){
+        window.location.href = 'csg.html';}
+    else if (window.location.href == 'http://localhost:8000/forms/acsg.html'){
+        window.location.href = 'acb.html';}
+    }
 
 /*
 document.querySelector("button").onclick = function () {
