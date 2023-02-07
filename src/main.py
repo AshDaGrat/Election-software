@@ -4,6 +4,13 @@ import socket
 
 eel.init("/Users/ayaan/Documents/ElectionSoftware/Election-software/src/web")
 
+vDict = {}
+
+
+@eel.expose
+def votingDict(post, candidate):
+    vDict[post] = candidate
+
 
 @eel.expose
 def test(a):
@@ -68,6 +75,16 @@ def login(input_val):
     # print(type(x))
     # print(int(x[1]))
     return int(x[1])
+
+
+@eel.expose
+def wannaVote(input_val):
+    if input_val == "forfeit":
+        return 0
+    elif input_val == "yes":
+        return 1
+    else:
+        return 2
 
 
 # Start the index.html file

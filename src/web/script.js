@@ -21,10 +21,26 @@ function getSelectedOption() {
             value = options[i].value;
         }
     }
-    eel.test(value)
+    if (window.location.href == 'http://localhost:8000/forms/wannavote.html'){
+    eel.wannaVote(value)(function(e){
+        if(e == 0){
+            if (confirm('Are you sure you want to forfeit?')) {
+            eel.test("pass")}
+        }
+        if(e == 1){
+            alert("okay");
+            eel.test("cool")
+        }
+        if(e == 2){
+            alert("Please choose an option");
+        }
+    })
+    }}
+
+function goBack(){
+    if (window.location.href == 'http://localhost:8000/forms/wannavote.html'){
+    window.location.href = '../index.html'}
 }
-
-
 /*
 document.querySelector("button").onclick = function () {
     // Call python's random_python function
