@@ -2,7 +2,7 @@ function getInputValue() {
     let inputVal = document.getElementById("inputId").value;
     eel.login(inputVal)(function(e){					
         if(e == 3){
-            window.location.href = "forms/wannavote.html";
+            window.location.href = "forms/splb.html";
             eel.votingDict('USN', inputVal);
         }
         if(e == 2){
@@ -86,10 +86,8 @@ function getSelectedOption() {
 
 function goBack(){
     eel.test(window.location.href);
-    if (window.location.href == 'http://localhost:8000/forms/wannavote.html'){
+    if (window.location.href == 'http://localhost:8000/forms/splb.html'){
         window.location.href = '../index.html';}
-    else if (window.location.href == 'http://localhost:8000/forms/splb.html'){
-        window.location.href = 'wannavote.html';}
     else if (window.location.href == 'http://localhost:8000/forms/splg.html'){
         window.location.href = 'splb.html';}
     else if (window.location.href == 'http://localhost:8000/forms/asplb.html'){
