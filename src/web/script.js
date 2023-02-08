@@ -2,7 +2,7 @@ function getInputValue() {
     let inputVal = document.getElementById("inputId").value;
     eel.login(inputVal)(function(e){					
         if(e == 3){
-            window.location.href = "forms/splb.html";
+            window.location.href = "forms/disc.html";
             eel.votingDict('USN', inputVal);
         }
         if(e == 2){
@@ -37,8 +37,15 @@ function getSelectedOption() {
         }
     })
     }
-    else if (value == ""){
-    alert("Please choose an option.");}
+    else if (value == "" && window.location.href!='http://localhost:8000/forms/disc.html'){
+        alert("Please choose an option.");}
+    else if (window.location.href == 'http://localhost:8000/forms/disc.html'){
+        window.location.href = 'splb.html'
+        }
+    else if (window.location.href == 'http://localhost:8000/forms/splb.html'){
+        eel.votingDict('splb', value);
+        window.location.href = 'splg.html'
+        }
     else if (window.location.href == 'http://localhost:8000/forms/splb.html'){
         eel.votingDict('splb', value);
         window.location.href = 'splg.html'
@@ -81,13 +88,17 @@ function getSelectedOption() {
         window.location.href = 'ascg.html';}
     else if (window.location.href == 'http://localhost:8000/forms/ascg.html'){
         eel.votingDict('ascg', value);
+        eel.submitVote()
+        window.location.href = 'thanks.html'
         }
     }
 
 function goBack(){
     eel.test(window.location.href);
-    if (window.location.href == 'http://localhost:8000/forms/splb.html'){
+    if (window.location.href == 'http://localhost:8000/forms/disc.html'){
         window.location.href = '../index.html';}
+    else if (window.location.href == 'http://localhost:8000/forms/splb.html'){
+        window.location.href = 'disc.html';}
     else if (window.location.href == 'http://localhost:8000/forms/splg.html'){
         window.location.href = 'splb.html';}
     else if (window.location.href == 'http://localhost:8000/forms/asplb.html'){
@@ -111,6 +122,9 @@ function goBack(){
     else if (window.location.href == 'http://localhost:8000/forms/ascg.html'){
         window.location.href = 'ascb.html';}
     }
+
+function goBackToLoginPage(){
+    window.location.href = '../index.html'}
 
 /*
 document.querySelector("button").onclick = function () {

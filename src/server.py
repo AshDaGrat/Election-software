@@ -3,7 +3,7 @@ import threading
 import json
 import auth
 
-HEADER = 256
+HEADER = 512
 PORT = 5050
 SERVER = socket.gethostbyname(socket.gethostname())
 ADDR = (SERVER, PORT)
@@ -14,10 +14,10 @@ server.bind(ADDR)
 
 
 def write_to_json(towrite):
-    towrite = eval(towrite)
-    data = json.load(open("data/recd_data.json"))
+    print(type(towrite))
+    data = json.load(open("../data/recd_data.json"))
     data["data"].append(towrite)
-    with open("data/recd_data.json", "w") as f:
+    with open("../data/recd_data.json", "w") as f:
         json.dump(data, f, indent=4)
 
 
@@ -49,6 +49,8 @@ def handle_client(conn, addr):
                     print(str([1, 3]))
                     print(str([1, 3]).encode(FORMAT))
                     conn.send(str([1, 3]).encode(FORMAT))
+            elif msg[0] == 2:
+                write_to_json(msg[1])
             else:
                 conn.send("Msg received".encode(FORMAT))
     conn.close()

@@ -26,7 +26,7 @@ def test(a):
         return 3"""
 
 
-HEADER = 256
+HEADER = 512
 PORT = 5050
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DISCONNECT"
@@ -86,6 +86,13 @@ def wannaVote(input_val):
         return 1
     else:
         return 2
+
+
+@eel.expose
+def submitVote():
+    global vDict
+    send(str([2, vDict]))
+    vDict = {}
 
 
 # Start the index.html file
