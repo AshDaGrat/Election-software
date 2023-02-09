@@ -27,7 +27,7 @@ function getSelectedOption() {
         if(e == 0){
             if (confirm('Are you sure you want to forfeit?')) {
             eel.forfeit()
-            window.location.href = 'thanks.html'}
+            window.location.href = 'thanks-forfeit.html'}
         }
         if(e == 1){
             eel.test("cool");
