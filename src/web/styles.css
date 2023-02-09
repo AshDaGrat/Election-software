@@ -90,18 +90,19 @@ body {
 	color: #fff;
 }
 .radio-btns {
-	width: 230px;
-	height: 230px;
+	width: 260px;
+	height: 260px;
 	text-align: center;
 	position: relative;
 	padding: 15px 15px;
 	border-radius: 30px;
 	cursor: pointer;
 	float:center;
+	font-size:1.15em;
 }
 .radio-btns > img {
-	width: 200px;
-	height: 200px;
+	width: 220px;
+	height: 220px;
 }
 .question {
 	height: fit-content;

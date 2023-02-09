@@ -2,7 +2,7 @@ import eel
 import auth
 import socket
 
-eel.init("/Users/ayaan/Documents/ElectionSoftware/Election-software/src/web")
+eel.init("web")
 
 vDict = {'USN':None}
 
@@ -30,7 +30,7 @@ HEADER = 512
 PORT = 5050
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DISCONNECT"
-SERVER = "127.0.0.1"
+SERVER = "192.168.1.14"
 ADDR = (SERVER, PORT)
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

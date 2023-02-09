@@ -15,7 +15,6 @@ scb = []
 scg = []
 ascb = []
 ascg = []
-forfeit = []
 
 for i in data:
     if 'forfeit' in i.values():
@@ -94,7 +93,3 @@ print("ASC - Girls")
 for i in set(ascg):
     print(f'{i} - {ascg.count(i)}')
 print()
-
-print("Forfeit")
-for i in forfeit:
-    print(i)
