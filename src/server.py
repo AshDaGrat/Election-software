@@ -20,6 +20,11 @@ def write_to_json(towrite):
     with open("../data/recd_data.json", "w") as f:
         json.dump(data, f, indent=4)
 
+def forfeitWrite(USN, file_path="../data/forfeit.json"):
+    data = json.load(open(file_path))
+    data["forfeit"].append(USN)
+    with open(file_path, "w") as f:
+        json.dump(data, f, indent=4)
 
 def handle_client(conn, addr):
     print(f"[NEW CONNECTION] {addr} connected.")
@@ -52,6 +57,10 @@ def handle_client(conn, addr):
             elif msg[0] == 2:
                 write_to_json(msg[1])
                 auth.addDone(msg[1]['USN'])
+            elif msg[0] == 3:
+                print(msg)
+                forfeitWrite(int(msg[1]))
+                auth.addDone(int(msg[1]))
             else:
                 conn.send("Msg received".encode(FORMAT))
     conn.close()

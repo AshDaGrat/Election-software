@@ -26,7 +26,8 @@ function getSelectedOption() {
     eel.wannaVote(value)(function(e){
         if(e == 0){
             if (confirm('Are you sure you want to forfeit?')) {
-            eel.test("pass")}
+            eel.forfeit()
+            window.location.href = 'thanks.html'}
         }
         if(e == 1){
             eel.test("cool");
@@ -40,6 +41,9 @@ function getSelectedOption() {
     else if (value == "" && window.location.href!='http://localhost:8000/forms/disc.html'){
         alert("Please choose an option.");}
     else if (window.location.href == 'http://localhost:8000/forms/disc.html'){
+        window.location.href = 'wannavote.html'
+        }
+    else if (window.location.href == 'http://localhost:8000/forms/wannavote.html'){
         window.location.href = 'splb.html'
         }
     else if (window.location.href == 'http://localhost:8000/forms/splb.html'){
@@ -88,7 +92,7 @@ function getSelectedOption() {
         window.location.href = 'ascg.html';}
     else if (window.location.href == 'http://localhost:8000/forms/ascg.html'){
         eel.votingDict('ascg', value);
-        eel.submitVote()
+        eel.submitVote();
         window.location.href = 'thanks.html'
         }
     }
@@ -97,8 +101,10 @@ function goBack(){
     eel.test(window.location.href);
     if (window.location.href == 'http://localhost:8000/forms/disc.html'){
         window.location.href = '../index.html';}
-    else if (window.location.href == 'http://localhost:8000/forms/splb.html'){
+    else if (window.location.href == 'http://localhost:8000/forms/wannavote.html'){
         window.location.href = 'disc.html';}
+    else if (window.location.href == 'http://localhost:8000/forms/splb.html'){
+        window.location.href = 'wannavote.html';}
     else if (window.location.href == 'http://localhost:8000/forms/splg.html'){
         window.location.href = 'splb.html';}
     else if (window.location.href == 'http://localhost:8000/forms/asplb.html'){
