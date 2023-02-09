@@ -17,8 +17,6 @@ ascb = []
 ascg = []
 
 for i in data:
-    if 'forfeit' in i.values():
-        forfeit.append(i['USN'])
     usn.append(i['USN'])
     splb.append(i['splb'])
     splg.append(i['splg'])
