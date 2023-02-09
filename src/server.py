@@ -37,20 +37,21 @@ def handle_client(conn, addr):
             print(type(msg))
             print(msg)
             if msg[0] == 0:
-                if auth.valid_usn(msg[1], "/Users/ayaan/Documents/ElectionSoftware/Election-software/data/done.xlsx"):
+                if auth.valid_usn(msg[1]) and auth.done(msg[1]):
                     print(str([1, 1]))
                     print(str([1, 1]).encode(FORMAT))
                     conn.send(str([1, 1]).encode(FORMAT))  # check for if they have already voted
-                if not (auth.valid_usn(msg[1], "/Users/ayaan/Documents/ElectionSoftware/Election-software/data/usn.xlsx")):
+                if not (auth.valid_usn(msg[1])):
                     print(str([1, 2]))
                     print(str([1, 2]).encode(FORMAT))
                     conn.send(str([1, 2]).encode(FORMAT))
-                else:
+                if auth.valid_usn(msg[1]) and not auth.done(msg[1]):
                     print(str([1, 3]))
                     print(str([1, 3]).encode(FORMAT))
                     conn.send(str([1, 3]).encode(FORMAT))
             elif msg[0] == 2:
                 write_to_json(msg[1])
+                auth.addDone(msg[1]['USN'])
             else:
                 conn.send("Msg received".encode(FORMAT))
     conn.close()
