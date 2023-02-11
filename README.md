@@ -44,4 +44,4 @@ data\done.json shows the list of voters who voted
 
 data\recd.json shows the complete data of how every voter voted
 
-Run data\counting.py to calculate votes
+Run counting.py to calculate votes
