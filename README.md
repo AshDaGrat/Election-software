@@ -1,6 +1,6 @@
 # Election-software
 
-This system is a comprehensive solution for conducting secure and efficient online voting. Built using a combination of Python, JavaScript, HTML, CSS, and the Eel library. It includes a user-friendly interface, voter ID verification, and results calculation.
+This system is a comprehensive solution for conducting secure and efficient voting over a LAN. Built using a combination of Python, JavaScript, HTML, CSS, and the Eel library. It includes a user-friendly interface, voter ID verification, and results calculation.
 
 <img src="https://cdn.discordapp.com/attachments/1073895599910436915/1073897377997541426/image.png" >
 
@@ -27,6 +27,7 @@ Run Server.py and copy the IP address:
 
 
 ## On Client Side:
+NOTE : Client and server should be connected to the same LAN
 Edit the main.py file with the above IP address 
 <img src="https://cdn.discordapp.com/attachments/1073895599910436915/1073899663989673984/image.png">
 
