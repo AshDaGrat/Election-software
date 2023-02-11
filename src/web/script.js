@@ -15,6 +15,7 @@ function getInputValue() {
 }
 
 function getSelectedOption() {
+
     var options = document.getElementsByName('options');
     var value = ""
     for (var i = 0; i < options.length; i++) {
@@ -22,24 +23,27 @@ function getSelectedOption() {
             value = options[i].value;
         }
     }
+
     if (window.location.href == 'http://localhost:8000/forms/wannavote.html'){
-    eel.wannaVote(value)(function(e){
-        if(e == 0){
-            if (confirm('Are you sure you want to forfeit?')) {
-            eel.forfeit()
-            window.location.href = 'thanks-forfeit.html'}
-        }
-        if(e == 1){
-            eel.test("cool");
-            window.location.href = 'splb.html';
-        }
-        if(e == 2){
-            alert("Please choose an option");
-        }
-    })
+        eel.wannaVote(value)(function(e){
+            if(e == 0){
+                if (confirm('Are you sure you want to forfeit?')) {
+                eel.forfeit()
+                window.location.href = 'thanks-forfeit.html'}
+            }
+            if(e == 1){
+                eel.test("cool");
+                window.location.href = 'splb.html';
+            }
+            if(e == 2){
+                alert("Please choose an option");
+            }
+        })
     }
+
     else if (value == "" && window.location.href!='http://localhost:8000/forms/disc.html'){
-        alert("Please choose an option.");}
+        alert("Please choose an option.");
+        }
     else if (window.location.href == 'http://localhost:8000/forms/disc.html'){
         window.location.href = 'wannavote.html'
         }
@@ -80,16 +84,20 @@ function getSelectedOption() {
         }
     else if (window.location.href == 'http://localhost:8000/forms/acsg.html'){
         eel.votingDict('acsg', value);
-        window.location.href = 'scb.html';}
+        window.location.href = 'scb.html';
+        }
     else if (window.location.href == 'http://localhost:8000/forms/scb.html'){
         eel.votingDict('scb', value);
-        window.location.href = 'scg.html';}
+        window.location.href = 'scg.html';
+        }
     else if (window.location.href == 'http://localhost:8000/forms/scg.html'){
         eel.votingDict('scg', value);
-        window.location.href = 'ascb.html';}
+        window.location.href = 'ascb.html';
+        }
     else if (window.location.href == 'http://localhost:8000/forms/ascb.html'){
         eel.votingDict('ascb', value);
-        window.location.href = 'ascg.html';}
+        window.location.href = 'ascg.html';
+        }
     else if (window.location.href == 'http://localhost:8000/forms/ascg.html'){
         eel.votingDict('ascg', value);
         eel.submitVote();
@@ -100,44 +108,48 @@ function getSelectedOption() {
 function goBack(){
     eel.test(window.location.href);
     if (window.location.href == 'http://localhost:8000/forms/disc.html'){
-        window.location.href = '../index.html';}
+        window.location.href = '../index.html';
+        }
     else if (window.location.href == 'http://localhost:8000/forms/wannavote.html'){
-        window.location.href = 'disc.html';}
+        window.location.href = 'disc.html';
+        }
     else if (window.location.href == 'http://localhost:8000/forms/splb.html'){
-        window.location.href = 'wannavote.html';}
+        window.location.href = 'wannavote.html';
+        }
     else if (window.location.href == 'http://localhost:8000/forms/splg.html'){
-        window.location.href = 'splb.html';}
+        window.location.href = 'splb.html';
+        }
     else if (window.location.href == 'http://localhost:8000/forms/asplb.html'){
-        window.location.href = 'splg.html';}
+        window.location.href = 'splg.html';
+        }
     else if (window.location.href == 'http://localhost:8000/forms/asplg.html'){
-        window.location.href = 'asplb.html';}
+        window.location.href = 'asplb.html';
+        }
     else if (window.location.href == 'http://localhost:8000/forms/csb.html'){
-        window.location.href = 'asplg.html';}
+        window.location.href = 'asplg.html';
+        }
     else if (window.location.href == 'http://localhost:8000/forms/csg.html'){
-        window.location.href = 'csb.html';}
+        window.location.href = 'csb.html';
+        }
     else if (window.location.href == 'http://localhost:8000/forms/acsb.html'){
-        window.location.href = 'csg.html';}
+        window.location.href = 'csg.html';
+        }
     else if (window.location.href == 'http://localhost:8000/forms/acsg.html'){
-        window.location.href = 'acsb.html';}
+        window.location.href = 'acsb.html';
+        }
     else if (window.location.href == 'http://localhost:8000/forms/scb.html'){
-        window.location.href = 'acsg.html';}
+        window.location.href = 'acsg.html';
+        }
     else if (window.location.href == 'http://localhost:8000/forms/scg.html'){
-        window.location.href = 'scb.html';}
+        window.location.href = 'scb.html';
+        }
     else if (window.location.href == 'http://localhost:8000/forms/ascb.html'){
-        window.location.href = 'scg.html';}
+        window.location.href = 'scg.html';
+        }
     else if (window.location.href == 'http://localhost:8000/forms/ascg.html'){
-        window.location.href = 'ascb.html';}
+        window.location.href = 'ascb.html';
+        }
     }
 
 function goBackToLoginPage(){
     window.location.href = '../index.html'}
-
-/*
-document.querySelector("button").onclick = function () {
-    // Call python's random_python function
-    eel.random_python()(function(number){					
-        // Update the div with a random number returned by python
-        document.querySelector(".random_number").innerHTML = number;
-    })
-    }
-*/

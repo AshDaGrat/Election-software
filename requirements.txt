@@ -7,7 +7,6 @@ future==0.18.3
 gevent==22.10.2
 gevent-websocket==0.10.1
 greenlet==2.0.2
-openpyxl==3.0.10
 pycparser==2.21
 pyparsing==3.0.9
 whichcraft==0.6.1

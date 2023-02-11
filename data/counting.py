@@ -1,6 +1,6 @@
 import json
 
-data = (json.load(open("../data/recd_data.json")))['data']
+data = (json.load(open("data/recd_data.json")))['data']
 
 usn = []
 splb = []

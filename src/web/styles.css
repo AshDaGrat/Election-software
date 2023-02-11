@@ -12,6 +12,7 @@ body {
 	display: flex;
 	min-height: 90vh;
   }
+
   .login {
 	color: white;
 	background: #1B4A9E;
@@ -24,20 +25,24 @@ body {
 	padding: 50px;
 	font-family: GlacialIndifference;
   }
+
   .login .head {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-family: GlacialIndifference;
   }
+
   .login .head .company {
 	font-size: 2.2em;
 	font-family: GlacialIndifference;
   }
+
   .login .msg {
 	text-align: center;
 	font-family: GlacialIndifference;
   }
+
   .login .form input[type=text].text {
 	border: none;
 	background: none;
@@ -48,10 +53,12 @@ body {
 	outline: none;
 	font-family: GlacialIndifference;
   }
+
   .login .form .text::placeholder {
 	color: #D3D3D3;
 	font-family: GlacialIndifference;
   }
+
   .login .form .btn-login {
 	background: none;
 	text-decoration: none;
@@ -63,18 +70,21 @@ body {
 	font-family: GlacialIndifference;
 	width: 100%;	
   }
+
   .login .form .btn-login:hover {
 	background: white;
 	color: dimgray;
 	transition: 0.5s;
 	font-family: GlacialIndifference;
   }
+
   .login .forgot {
 	text-decoration: none;
 	color: white;
 	float: right;
 	font-family: GlacialIndifference;
   }
+
 .indiv {
 	position: relative;
 	float:left;
@@ -82,13 +92,16 @@ body {
 	padding-right:30px;
 	padding-bottom:30px;
 }
+
 .indiv > input {
 	display: none;
 }
+
 .indiv input:checked + .radio-btns {
 	background: #1b4a9b;
 	color: #fff;
 }
+
 .radio-btns {
 	width: 260px;
 	height: 260px;
@@ -100,16 +113,21 @@ body {
 	float:center;
 	font-size:1.15em;
 }
+
 .radio-btns > img {
 	width: 220px;
 	height: 220px;
 }
+
+
 .question {
 	height: fit-content;
 	width: 100%;
 	text-align: center;
 	vertical-align: top;
 }
+
+
 .dei {
     font-size: 4em;
 	height: fit-content;
@@ -117,8 +135,9 @@ body {
 	text-align: center;
 	vertical-align: top;
 	color: white;
-
     }
+
+
 .buttons {
 	font-size: 1em;
 	width:fit-content;
@@ -126,6 +145,8 @@ body {
 	padding-left:50px;
 	padding-right:50px;
 }
+
+
 .next-btn {
     width:100px;
     height:50px;
@@ -134,12 +155,17 @@ body {
     right: 20px;
     font-family: GlacialIndifference;
     font-size: 2em;
+	background: #1B4A9E;
+	color: #fff;
 }
+
+
 .next-btn:hover {
-    background: #1B4A9E;
-	color: white;
+    background: #fff;
+	color: dimgray;
 	transition: 0.25s;
 }
+
 
 .prev-btn {
     width:100px;
@@ -149,12 +175,17 @@ body {
     left: 20px;
     font-family: GlacialIndifference;
     font-size: 2em;
+	background: #1B4A9E;
+	color: #fff;
 }
+
+
 .prev-btn:hover {
-    background: #1B4A9E;
-	color: white;
+    background: #fff;
+	color: dimgray;
 	transition: 0.25s;
 }
+
 
 label {
 	display:grid;

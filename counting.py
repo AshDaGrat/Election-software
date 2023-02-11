@@ -1,6 +1,6 @@
 import json
 
-data = (json.load(open("../data/recd_data.json")))['data']
+data = (json.load(open("data/recd_data.json")))['data']
 
 usn = []
 splb = []
@@ -31,6 +31,8 @@ for i in data:
     ascb.append(i['ascb'])
     ascg.append(i['ascg'])
 
+
+
 print("SPL - Boys")
 for i in set(splb):
     print(f'{i} - {splb.count(i)}')
@@ -45,7 +47,6 @@ print("ASPL - Boys")
 for i in set(asplb):
     print(f'{i} - {asplb.count(i)}')
 print()
-
 
 print("ASPL - Girls")
 for i in set(asplg):

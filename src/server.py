@@ -15,12 +15,12 @@ server.bind(ADDR)
 
 def write_to_json(towrite):
     print(type(towrite))
-    data = json.load(open("../data/recd_data.json"))
+    data = json.load(open("data/recd_data.json"))
     data["data"].append(towrite)
-    with open("../data/recd_data.json", "w") as f:
+    with open("data/recd_data.json", "w") as f:
         json.dump(data, f, indent=4)
 
-def forfeitWrite(USN, file_path="../data/forfeit.json"):
+def forfeitWrite(USN, file_path="data/forfeit.json"):
     data = json.load(open(file_path))
     data["forfeit"].append(USN)
     with open(file_path, "w") as f:
@@ -35,40 +35,47 @@ def handle_client(conn, addr):
         if msg_length:
             msg_length = int(msg_length)
             msg = conn.recv(msg_length).decode(FORMAT)
-            #write_to_json(msg)
 
             print(f"[{addr}] {msg}")
             msg = eval(msg)
             print(type(msg))
             print(msg)
             if msg[0] == 0:
+
                 if auth.valid_usn(msg[1]) and auth.done(msg[1]):
                     print(str([1, 1]))
                     print(str([1, 1]).encode(FORMAT))
-                    conn.send(str([1, 1]).encode(FORMAT))  # check for if they have already voted
+                    conn.send(str([1, 1]).encode(FORMAT)) # check for if they have already voted
+
                 if not (auth.valid_usn(msg[1])):
                     print(str([1, 2]))
                     print(str([1, 2]).encode(FORMAT))
                     conn.send(str([1, 2]).encode(FORMAT))
+
                 if auth.valid_usn(msg[1]) and not auth.done(msg[1]):
                     print(str([1, 3]))
                     print(str([1, 3]).encode(FORMAT))
                     conn.send(str([1, 3]).encode(FORMAT))
+
             elif msg[0] == 2:
                 write_to_json(msg[1])
                 auth.addDone(msg[1]['USN'])
+
             elif msg[0] == 3:
                 print(msg)
                 forfeitWrite(int(msg[1]))
                 auth.addDone(int(msg[1]))
+
             else:
                 conn.send("Msg received".encode(FORMAT))
+
     conn.close()
 
 
 def start():
     server.listen()
     print(f"[LISTENING] Server is listening on {SERVER}")
+    
     while True:
         conn, addr = server.accept()
         thread = threading.Thread(target=handle_client, args=(conn, addr))

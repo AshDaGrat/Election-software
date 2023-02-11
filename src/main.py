@@ -1,36 +1,23 @@
 import eel
-import auth
 import socket
 
 eel.init("web")
-
 vDict = {'USN':None}
-
 
 @eel.expose
 def votingDict(post, candidate):
     vDict[post] = candidate
     print(vDict)
 
-
 @eel.expose
 def test(a):
     print(a)
-
-    """if auth.valid_usn(input_val, "../data/done.xlsx"):
-        return 1  # check for if they have already voted
-    if not (auth.valid_usn(input_val, "../data/usn.xlsx")):
-        return 2  # check for invalid USN
-    else:
-        # auth.add_to_excel(input_val, "data/done.xlsx")
-        return 3"""
-
 
 HEADER = 512
 PORT = 5050
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DISCONNECT"
-SERVER = "192.168.1.14"
+SERVER = "192.168.219.1"
 ADDR = (SERVER, PORT)
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -82,7 +69,6 @@ def forfeit():
     send(str([3, vDict['USN']]))
     vDict = {}
 
+
 # Start the index.html file
 eel.start("index.html")
-
-# send(str(CHOICES))
