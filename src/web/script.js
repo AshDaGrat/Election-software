@@ -1,6 +1,7 @@
 function getInputValue() {
     let inputVal = document.getElementById("inputId").value;
-    eel.login(inputVal)(function(e){					
+    eel.login(inputVal)(function(e){			
+        console.log(e)		
         if(e == 3){
             window.location.href = "forms/disc.html";
             eel.votingDict('USN', inputVal);

@@ -1,6 +1,6 @@
 import socket
 import threading
-import json
+import pickle
 import auth
 
 HEADER = 512
@@ -12,19 +12,20 @@ DISCONNECT_MESSAGE = "!DISCONNECT"
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(ADDR)
 
-
-def write_to_json(towrite):
+def write_to_dat(towrite):
     print(type(towrite))
-    data = json.load(open("data/recd_data.json"))
+    fr = open("data/recd_data.dat", "rb")
+    data = pickle.load(fr)
     data["data"].append(towrite)
-    with open("data/recd_data.json", "w") as f:
-        json.dump(data, f, indent=4)
+    with open("data/recd_data.dat", "wb") as f:
+        pickle.dump(data, f)
 
-def forfeitWrite(USN, file_path="data/forfeit.json"):
-    data = json.load(open(file_path))
+def forfeitWrite(USN, file_path="data/forfeit.dat"):
+    fr = open(file_path, "rb")
+    data = pickle.load(fr)
     data["forfeit"].append(USN)
-    with open(file_path, "w") as f:
-        json.dump(data, f, indent=4)
+    with open(file_path, "wb") as f:
+        pickle.dump(data, f)
 
 def handle_client(conn, addr):
     print(f"[NEW CONNECTION] {addr} connected.")
@@ -58,7 +59,7 @@ def handle_client(conn, addr):
                     conn.send(str([1, 3]).encode(FORMAT))
 
             elif msg[0] == 2:
-                write_to_json(msg[1])
+                write_to_dat(msg[1])
                 auth.addDone(msg[1]['USN'])
 
             elif msg[0] == 3:

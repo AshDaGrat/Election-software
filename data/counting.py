@@ -1,6 +1,8 @@
-import json
+import pickle
 
-data = (json.load(open("data/recd_data.json")))['data']
+f = open("data/recd_data.dat", "rb")
+data = (pickle.load(f))
+print(data)
 
 usn = []
 splb = []
@@ -16,7 +18,7 @@ scg = []
 ascb = []
 ascg = []
 
-for i in data:
+for i in data['data']:
     usn.append(i['USN'])
     splb.append(i['splb'])
     splg.append(i['splg'])

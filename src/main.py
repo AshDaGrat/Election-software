@@ -1,7 +1,7 @@
 import eel
 import socket
 
-eel.init("web")
+eel.init("src/web")
 vDict = {'USN':None}
 
 @eel.expose
@@ -17,7 +17,7 @@ HEADER = 512
 PORT = 5050
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DISCONNECT"
-SERVER = "192.168.219.1"
+SERVER = "192.168.1.12"
 ADDR = (SERVER, PORT)
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
