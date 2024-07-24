@@ -2,7 +2,7 @@
 
 This system is a comprehensive solution for conducting secure and efficient voting over a LAN. Built using a combination of Python, JavaScript, HTML, CSS, and the Eel library. It includes a user-friendly interface, voter ID verification, and results calculation.
 
-<img src="https://cdn.discordapp.com/attachments/1073895599910436915/1073897377997541426/image.png" >
+![image](https://github.com/user-attachments/assets/6437b1c1-3c2f-455f-8e4c-d54bc4f47dcb)
 
 <br>
 
@@ -18,11 +18,13 @@ pip install -r requirements.txt
 # Running
 ## On Server Side:
 Edit the data\usn.json file with the voter IDs
-<img src="https://cdn.discordapp.com/attachments/1073895599910436915/1073900366011322428/image.png">
+
+![image](https://github.com/user-attachments/assets/d29b0c2c-9701-4373-bbe3-c9c26a63c3ce)
 
 
 Run Server.py and copy the IP address:
-<img src="https://cdn.discordapp.com/attachments/1073895599910436915/1073898963746439258/image.png">
+
+![image](https://github.com/user-attachments/assets/0be23973-8340-41e6-bbf0-b21cb5e353a1)
 
 
 
@@ -30,10 +32,12 @@ Run Server.py and copy the IP address:
 NOTE : Client and server should be connected to the same LAN
 
 Edit the main.py file with the above IP address 
-<img src="https://cdn.discordapp.com/attachments/1073895599910436915/1073899663989673984/image.png">
 
-Run main.py
+![image](https://github.com/user-attachments/assets/d6f5ed22-769c-44e8-ac64-b247f71930e1)
 
+
+
+<b> Run main.py </b>
 <br>
 
 # Vote Calculation
